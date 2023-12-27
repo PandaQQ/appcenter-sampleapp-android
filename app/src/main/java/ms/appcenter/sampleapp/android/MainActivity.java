@@ -38,20 +38,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_root);
 
         // Initialize SDK
-        if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
-            // Use APPCENTER_APP_SECRET environment variable if it exists
-            AppCenter.start(getApplication(), BuildConfig.APPCENTER_APP_SECRET,
-                    Analytics.class, Crashes.class, Distribute.class);
-        } else {
+//        if (!BuildConfig.APPCENTER_APP_SECRET.equals("")) {
+//            // Use APPCENTER_APP_SECRET environment variable if it exists
+//            AppCenter.start(getApplication(), BuildConfig.APPCENTER_APP_SECRET,
+//                    Analytics.class, Crashes.class, Distribute.class);
+//        } else {
             // Otherwise use the hardcoded string value here
             AppCenter.start(getApplication(), "45c5f95d-9ea0-4910-b5bc-5a4135a88d7b",
                     Analytics.class, Crashes.class, Distribute.class);
-        }
+//        }
 
 
-        if (BuildConfig.DEBUG) {
-            AppCenter.setLogLevel(Log.VERBOSE);
-        }
+//        if (BuildConfig.DEBUG) {
+//            AppCenter.setLogLevel(Log.VERBOSE);
+//        }
 
         // UI Elements
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
